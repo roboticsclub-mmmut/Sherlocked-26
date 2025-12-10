@@ -1,0 +1,68 @@
+#root {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3d2817 0%, #5c3d2e 50%, #2a1810 100%);
+}
+
+/* Main App Container */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page Transitions */
+main {
+  flex: 1;
+  width: 100%;
+}
+
+/* Responsive Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Global Button Styles */
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 2px solid #ff8c42;
+  background: transparent;
+  color: #ff8c42;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(255, 140, 66, 0.2);
+}
+
+.btn:hover {
+  background: rgba(255, 140, 66, 0.1);
+  color: #ffa500;
+  box-shadow: 0 0 20px rgba(255, 140, 66, 0.5);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* Error States */
+.error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* Loading States */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}

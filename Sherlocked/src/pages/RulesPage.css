@@ -1,0 +1,475 @@
+.rules-page {
+  min-height: 100vh;
+  background-color: #0a0515;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+    padding-top: 150px; /* Added for floating navbar */
+
+}
+
+/* Mysterious overlay with particle effect */
+.rules-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+              rgba(10, 5, 25, 0.9) 0%, 
+              rgba(25, 15, 45, 0.95) 100%),
+              radial-gradient(circle at 30% 20%, 
+              rgba(138, 43, 226, 0.25) 0%, 
+              transparent 50%),
+              radial-gradient(circle at 70% 80%, 
+              rgba(75, 0, 130, 0.2) 0%, 
+              transparent 50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Subtle moving particles */
+.rules-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 10% 20%, rgba(138, 43, 226, 0.4), transparent),
+    radial-gradient(2px 2px at 90% 30%, rgba(147, 112, 219, 0.3), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(123, 104, 238, 0.2), transparent);
+  background-size: 300% 300%;
+  animation: particleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+@keyframes particleFloat {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+.rules-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+.rules-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 2rem;
+  border-radius: 15px;
+  background: rgba(15, 8, 30, 0.6);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+              0 0 50px rgba(138, 43, 226, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.rules-header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8),
+               0 0 30px rgba(138, 43, 226, 0.7),
+               0 0 60px rgba(75, 0, 130, 0.4);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #e0e0e0;
+  margin: 0 0 20px 0;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-divider {
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+              transparent, 
+              #8a2be2, 
+              #9370db, 
+              #8a2be2, 
+              transparent);
+  margin: 0 auto 30px;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+  border-radius: 2px;
+}
+
+/* Scroll Down Button */
+.scroll-down-btn {
+  background: rgba(15, 8, 30, 0.8);
+  border: 2px solid #8a2be2;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 100;
+  pointer-events: auto;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4),
+              0 0 40px rgba(75, 0, 130, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.scroll-down-btn:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.6),
+              0 0 60px rgba(138, 43, 226, 0.3);
+}
+
+.scroll-down-btn:active {
+  transform: scale(0.95);
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  animation: bounce 2s infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Content */
+.rules-content {
+  margin-bottom: 50px;
+}
+
+.rules-section {
+  background: rgba(15, 8, 30, 0.7);
+  border-left: 4px solid #8a2be2;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(138, 43, 226, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(138, 43, 226, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rules-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+              transparent, 
+              rgba(138, 43, 226, 0.1), 
+              transparent);
+  transition: left 0.6s ease;
+}
+
+.rules-section:hover::before {
+  left: 100%;
+}
+
+.rules-section:hover {
+  background: rgba(20, 10, 40, 0.8);
+  border-left-color: #ffffff;
+  box-shadow: 0 15px 40px rgba(138, 43, 226, 0.4),
+              0 0 40px rgba(138, 43, 226, 0.3);
+  transform: translateY(-5px);
+}
+
+.rules-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.rules-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #8a2be2, transparent);
+  border-radius: 2px;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rules-list li {
+  color: #e0e0e0;
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.rules-list li:before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: #8a2be2;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+}
+
+.rules-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Section Text */
+.section-text {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Round Details */
+.round-detail {
+  background: rgba(20, 10, 40, 0.8);
+  border: 1px solid #9370db;
+  padding: 25px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4),
+              0 0 20px rgba(138, 43, 226, 0.2);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.round-detail:hover {
+  border-color: #8a2be2;
+  box-shadow: 0 8px 30px rgba(138, 43, 226, 0.4);
+}
+
+.round-detail h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.rules-list ol {
+  margin: 0;
+  padding-left: 25px;
+  color: #e0e0e0;
+}
+
+.rules-list ol li {
+  color: #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.rules-list strong {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Highlight Section */
+.rules-highlight {
+  background: rgba(30, 15, 60, 0.8);
+  border-left: 4px solid #9370db;
+  box-shadow: 0 10px 35px rgba(138, 43, 226, 0.3),
+              0 0 40px rgba(147, 112, 219, 0.2);
+  animation: highlightPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes highlightPulse {
+  0% {
+    box-shadow: 0 10px 35px rgba(138, 43, 226, 0.3),
+                0 0 40px rgba(147, 112, 219, 0.2);
+  }
+  100% {
+    box-shadow: 0 10px 35px rgba(138, 43, 226, 0.5),
+                0 0 50px rgba(147, 112, 219, 0.3),
+                0 0 70px rgba(75, 0, 130, 0.2);
+  }
+}
+
+.rules-highlight h2 {
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+}
+
+.highlight-list {
+  list-style: decimal;
+  padding-left: 25px;
+  margin: 0;
+}
+
+.highlight-list li {
+  color: #e0e0e0;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-text {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+  font-style: italic;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Button */
+.btn-begin-investigation {
+  display: block;
+  margin: 40px auto 0;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, 
+              rgba(138, 43, 226, 0.1) 0%, 
+              rgba(75, 0, 130, 0.05) 100%);
+  color: #ffffff;
+  border: 2px solid #8a2be2;
+  border-radius: 25px;
+  font-weight: 900;
+  font-size: 1rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5),
+              0 0 30px rgba(138, 43, 226, 0.4);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+.btn-begin-investigation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+              transparent, 
+              rgba(138, 43, 226, 0.3), 
+              transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-begin-investigation:hover::before {
+  left: 100%;
+}
+
+.btn-begin-investigation:hover {
+  background: linear-gradient(135deg, 
+              rgba(138, 43, 226, 0.2) 0%, 
+              rgba(75, 0, 130, 0.1) 100%);
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 10px 40px rgba(138, 43, 226, 0.7),
+              0 0 60px rgba(138, 43, 226, 0.4),
+              0 0 100px rgba(75, 0, 130, 0.2);
+}
+
+.btn-begin-investigation:active {
+  transform: scale(1.04) translateY(-2px);
+  box-shadow: 0 5px 20px rgba(138, 43, 226, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rules-page {
+    padding: 20px 15px;
+  }
+
+  .rules-header {
+    padding: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .rules-header h1 {
+    font-size: 2rem;
+    letter-spacing: 3px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+  }
+
+  .rules-section {
+    padding: 20px;
+    margin-bottom: 18px;
+  }
+
+  .rules-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .rules-list li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-left: 25px;
+  }
+
+  .btn-begin-investigation {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 300px;
+    letter-spacing: 2px;
+  }
+
+  .scroll-down-btn {
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+  }
+}
